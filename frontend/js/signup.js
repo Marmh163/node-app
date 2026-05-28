@@ -23,7 +23,20 @@ registerBtn.addEventListener('click' , async(event)=>{
         }
     })
     const data = await res.json()
-    console.log(data)
+    
+    if(res.status == 422){
+        return Swal.fire({
+        title : 'Registration Failed!',
+        icon : 'error',
+        })
+    }
+
+    Swal.fire({
+        title : 'Registration is successful!',
+        icon : 'success',
+        
+
+    })
 })
 
 
