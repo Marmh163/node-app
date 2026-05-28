@@ -1,10 +1,12 @@
 // const crypto = require('crypto')
 // global.crypto= crypto
 const express = require('express')
+const cors = require("cors")
 const userModel = require('./models/user.model')
 require('./configs/db')
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.post('/api/users', async(req , res)=>{
     console.log(req)
